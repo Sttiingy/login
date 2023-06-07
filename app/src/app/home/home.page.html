@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div>
+    <ion-row>
+      <ion-col class="center-col">
+        <ion-card class="login-card-header">
+          <ion-card-header>
+            <ion-card-title>Login</ion-card-title>
+            <ion-card-subtitle>You don't have an account? Register</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+    
+        <ion-card class="login-card">
+          <ion-card-content>
+            <p>
+              Username:
+            </p>
+            <ion-item shape="round" class="input">
+              <ion-input></ion-input>
+            </ion-item>
+            <p>
+              Password:
+            </p>
+            <ion-row>
+              <ion-item shape="round" class="input" *ngIf="!passwordIsVisible">
+                <ion-input class="input"clear-on-edit="false" type="password" [(ngModel)]="password"></ion-input>
+              </ion-item>
+              <ion-item shape="round" class="input" *ngIf="passwordIsVisible">
+                <ion-input class="input" clear-on-edit="false" [(ngModel)]="password"></ion-input>
+              </ion-item>
+              <ion-button class="clickable-icon" *ngIf="!passwordIsVisible" (click)="togglePasswordVisibility()">
+                <ion-icon name="eye-outline" *ngIf="!passwordIsVisible"></ion-icon>
+              </ion-button>
+              <ion-button class="clickable-icon" *ngIf="passwordIsVisible" (click)="togglePasswordVisibility()">
+                <ion-icon name="eye-off-outline" *ngIf="passwordIsVisible" onC></ion-icon>
+              </ion-button>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
